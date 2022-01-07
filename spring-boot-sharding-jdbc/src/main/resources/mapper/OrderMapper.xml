@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jeespring.sharding.mapper.OrderMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="Order">
+        <id column="id" property="id" />
+        <result column="user_id" property="userId" />
+        <result column="commodity_code" property="commodityCode" />
+        <result column="price" property="price" />
+        <result column="update_time" property="updateTime" />
+        <result column="create_time" property="createTime" />
+    </resultMap>
+
+    <select id="selectByUserId" resultType="Order">
+        SELECT id, user_id, amount, address, update_time, create_time FROM t_order
+    </select>
+</mapper>

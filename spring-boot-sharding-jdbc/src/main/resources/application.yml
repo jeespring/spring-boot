@@ -1,0 +1,59 @@
+#公共配置
+spring:
+  shardingsphere:
+    datasource:
+      names: ds
+      ds:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://localhost:3306/jeespring-boot?characterEncoding=utf-8
+        username: root
+        password: root
+    rules:
+      sharding:
+        sharding-algorithms:
+          t-order-inline:
+            type: INLINE
+            props:
+              algorithm-expression: t_order_$->{user_id % 2}
+          t-order-item-inline:
+            type: INLINE
+            props:
+              algorithm-expression: t_order_item_$->{user_id % 2}
+        key-generators:
+          snowflake:
+            type: SNOWFLAKE
+            props:
+              worker-id: 1
+        tables:
+          t_order:
+            actual-data-nodes: ds.t_order_$->{0..1}
+            table-strategy:
+              standard:
+                sharding-column: user_id
+                sharding-algorithm-name: t-order-inline
+            key-generate-strategy:
+              column: id
+              type: SNOWFLAKE
+          t_order_item:
+            actual-data-nodes: ds.t_order_item_$->{0..1}
+            table-strategy:
+              standard:
+                sharding-column: user_id
+                sharding-algorithm-name: t-order-item-inline
+            key-generate-strategy:
+              column: id
+              key-generator-name: snowflake
+    props:
+      sql:
+        show: true
+mybatis-plus:
+  global-config:
+    banner: false
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #开启sql日志
+    map-underscore-to-camel-case: true # 开启驼峰
+  type-aliases-package: com.jeespring.sharding.entity  #定义所有操作类的别名所在包
+  mapper-locations: classpath:mapper/*Mapper.xml
+server:
+  port: 10008
