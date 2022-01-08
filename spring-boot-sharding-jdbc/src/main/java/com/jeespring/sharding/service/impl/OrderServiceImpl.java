@@ -8,7 +8,6 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.jeespring.sharding.entity.Order;
 import com.jeespring.sharding.mapper.OrderMapper;
 import com.jeespring.sharding.service.OrderService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
