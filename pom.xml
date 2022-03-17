@@ -12,29 +12,36 @@
 
     <modules>
         <module>spring-boot-sharding-jdbc</module>
+        <module>spring-boot-admin-server</module>
+        <module>spring-boot-admin-client</module>
+        <module>spring-boot-kafka</module>
+        <module>spring-boot-elasticsearch</module>
     </modules>
 
     <properties>
         <java.version>1.8</java.version>
         <spring-boot.version>2.5.6</spring-boot.version>
-        <spring-boot-admin.version>2.4.3</spring-boot-admin.version>
+        <spring-boot-admin.version>2.5.3</spring-boot-admin.version>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
 
         <mybatis.plus.version>3.4.3</mybatis.plus.version>
-        <mapper.boot.version>2.1.5</mapper.boot.version>
+        <mapper.boot.version>4.2.0</mapper.boot.version>
         <pagehelper.boot.version>1.3.1</pagehelper.boot.version>
         <mybatis.generator.core.version>1.3.2</mybatis.generator.core.version>
         <sharding.jdbc.version>5.0.0</sharding.jdbc.version>
+        <kafka.version>2.8.2</kafka.version>
+        <spring.data.elasticsearch.version>2.5.6</spring.data.elasticsearch.version>
         <druid.version>1.2.8</druid.version>
         <druid.boot.version>1.2.8</druid.boot.version>
         <mysql.version>8.0.26</mysql.version>
         <fastjson.version>1.2.76</fastjson.version>
         <lombok.version>1.18.20</lombok.version>
         <persistence.version>1.0.2</persistence.version>
-        <apache.common.version>3.12.0</apache.common.version>
+        <common.io.version>2.6</common.io.version>
+        <common.lang3.version>3.12.0</common.lang3.version>
     </properties>
 
     <dependencyManagement>
@@ -84,6 +91,31 @@
             </dependency>
 
             <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-server</artifactId>
+                <version>${spring-boot-admin.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-client</artifactId>
+                <version>${spring-boot-admin.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.kafka</groupId>
+                <artifactId>spring-kafka</artifactId>
+                <version>${kafka.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+                <version>${spring.data.elasticsearch.version}</version>
+            </dependency>
+
+
+            <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql.version}</version>
@@ -114,9 +146,15 @@
             </dependency>
 
             <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${common.io.version}</version>
+            </dependency>
+
+            <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
-                <version>${apache.common.version}</version>
+                <version>${common.lang3.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -133,13 +171,13 @@
         </dependency>
 
         <dependency>
-            <groupId>javax.persistence</groupId>
-            <artifactId>persistence-api</artifactId>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
         </dependency>
     </dependencies>
 
@@ -148,6 +186,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
             </plugin>
         </plugins>
     </build>
