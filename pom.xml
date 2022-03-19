@@ -16,6 +16,7 @@
         <module>spring-boot-admin-client</module>
         <module>spring-boot-kafka</module>
         <module>spring-boot-elasticsearch</module>
+        <module>spring-boot-mybatis-plus</module>
     </modules>
 
     <properties>
@@ -113,7 +114,6 @@
                 <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
                 <version>${spring.data.elasticsearch.version}</version>
             </dependency>
-
 
             <dependency>
                 <groupId>mysql</groupId>
