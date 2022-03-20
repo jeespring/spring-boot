@@ -17,6 +17,7 @@
         <module>spring-boot-kafka</module>
         <module>spring-boot-elasticsearch</module>
         <module>spring-boot-mybatis-plus</module>
+        <module>spring-boot-mybatis-plus-generator</module>
     </modules>
 
     <properties>
@@ -37,6 +38,7 @@
         <spring.data.elasticsearch.version>2.5.6</spring.data.elasticsearch.version>
         <druid.version>1.2.8</druid.version>
         <druid.boot.version>1.2.8</druid.boot.version>
+        <freemarker.boot.version>2.5.5</freemarker.boot.version>
         <mysql.version>8.0.26</mysql.version>
         <fastjson.version>1.2.76</fastjson.version>
         <lombok.version>1.18.20</lombok.version>
@@ -83,6 +85,12 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid-spring-boot-starter</artifactId>
                 <version>${druid.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-freemarker</artifactId>
+                <version>${freemarker.boot.version}</version>
             </dependency>
 
             <dependency>
