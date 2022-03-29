@@ -21,6 +21,7 @@
         <module>spring-boot-mybatis-mapper</module>
         <module>spring-boot-mybatis-generator</module>
         <module>spring-boot-spring-security</module>
+        <module>spring-boot-redis</module>
     </modules>
 
     <properties>
