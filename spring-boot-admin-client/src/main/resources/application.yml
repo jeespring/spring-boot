@@ -1,0 +1,18 @@
+server:
+  port: 10011
+spring:
+  application:
+    name: spring-boot-admin-client
+  boot:
+    admin:
+      client:
+        url: http://127.0.0.1:10010
+        password: admin
+        username: admin
+        instance:
+          prefer-ip: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
