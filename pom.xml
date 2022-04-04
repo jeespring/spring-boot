@@ -22,6 +22,7 @@
         <module>spring-boot-mybatis-generator</module>
         <module>spring-boot-spring-security</module>
         <module>spring-boot-redis</module>
+        <module>spring-boot-canal</module>
     </modules>
 
     <properties>
