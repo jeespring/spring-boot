@@ -1,1 +1,19 @@
+server:
+  port: 10009
+spring:
+  application:
+    name: spring-boot-kafka
+  kafka:
+    bootstrap-servers: 127.0.0.1:9091,127.0.0.1:9092,127.0.0.1:9093
+    producer:
+      retries: 3 # 客户端会发送失败重试次数
+      batch-size: 16384 #16K
+      buffer-memory: 33554432 #32M
+      # 指定消息key和消息体的编码方式
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: consumer-group # 消费者组
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
 
