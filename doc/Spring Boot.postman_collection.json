@@ -1,0 +1,500 @@
+{
+	"info": {
+		"_postman_id": "7e3ec688-6a9c-48ae-a04c-29addeff3b29",
+		"name": "Spring Boot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "mybatis-plus/selectById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:12000/user/selectById?id=1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "12000",
+					"path": [
+						"user",
+						"selectById"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mybatis-plus/selectById Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:12000/user/selectById?id=1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "12000",
+					"path": [
+						"user",
+						"selectById"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mybatis-plus/selectByName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:10005/user/selectByName?name=张朝阳",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "10005",
+					"path": [
+						"user",
+						"selectByName"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "张朝阳"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mybatis-plus/selectPageByAge",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"age\":10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:10005/user/selectPageByAge?pageNum=1&pageSize=2",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "10005",
+					"path": [
+						"user",
+						"selectPageByAge"
+					],
+					"query": [
+						{
+							"key": "pageNum",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mybatis-plus/selectPage",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:10005/user/selectPage?pageNum=1&pageSize=2",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "10005",
+					"path": [
+						"user",
+						"selectPage"
+					],
+					"query": [
+						{
+							"key": "pageNum",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mybatis-plus/insert",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"哈利\",\r\n    \"age\": 20,\r\n    \"email\": \"hali@163.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:10005/user/insert",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "10005",
+					"path": [
+						"user",
+						"insert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mybatis-plus/insert Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"哈利波特\",\r\n    \"age\": 18,\r\n    \"email\": \"halibote@163.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:10005/user/update",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "10005",
+					"path": [
+						"user",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mybatis-plus/delete",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:10005/user/delete",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "10005",
+					"path": [
+						"user",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mapper/select",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:10006/user/select",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "10006",
+					"path": [
+						"user",
+						"select"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mapper/select Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:10006/user/select",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "10006",
+					"path": [
+						"user",
+						"select"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sharding-jdbc/user/selectAll",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:10008/user/selectAll",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "10008",
+					"path": [
+						"user",
+						"selectAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sharding-jdbc/user/select",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:10008/user/select",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "10008",
+					"path": [
+						"user",
+						"select"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sharding-jdbc/order/selectAll",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:10008/order/selectAll",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "10008",
+					"path": [
+						"order",
+						"selectAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sharding-jdbc/order/selectAll Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:10008/order/selectAll",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "10008",
+					"path": [
+						"order",
+						"selectAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "kafka/sendMessage",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:10009/kafka/sendMessage",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "10009",
+					"path": [
+						"kafka",
+						"sendMessage"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
