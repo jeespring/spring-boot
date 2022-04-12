@@ -1,11 +1,11 @@
 package com.jeespring.redis.service;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.annotation.Reference;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
+import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -22,7 +22,7 @@ import java.util.concurrent.TimeUnit;
 @Service
 public class RedisServer {
 
-    @Reference
+    @Resource
     private RedisTemplate redisTemplate;
 
     /**
