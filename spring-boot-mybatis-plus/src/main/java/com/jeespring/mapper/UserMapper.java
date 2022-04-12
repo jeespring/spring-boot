@@ -1,8 +1,8 @@
 package com.jeespring.mapper;
 
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.jeespring.entity.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.jeespring.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -21,5 +21,5 @@ public interface UserMapper extends BaseMapper<User> {
 
     List<User> selectByName(String name);
 
-    IPage<User> selectPageByAge(IPage<User> page, @Param("user") User user);
+    Page<User> selectPageByAge(Page<User> page, @Param("user") User user);
 }

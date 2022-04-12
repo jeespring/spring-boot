@@ -1,8 +1,9 @@
 package com.jeespring.service;
 
-import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.jeespring.entity.User;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -23,13 +24,13 @@ public interface UserService {
 
     List<User> selectList(User user);
 
-    IPage<User> selectPage(User user, int pageNumber, int pageSize);
+    Page<User> selectPage(User user, int pageNumber, int pageSize);
 
     List<User> selectByMap(User user);
 
     List<User> selectByName(String name);
 
-    IPage<User> selectPageByAge(User user,int pageNumber,int pageSize);
+    Page<User> selectPageByAge(User user,int pageNumber,int pageSize);
 
     int count(User user);
 
@@ -50,4 +51,5 @@ public interface UserService {
 
     int deleteBatchIds(List<Long> ids);
 
+    List<User> selectByNameAndCreateTimeRange(String name, String beginTime, String endTime);
 }

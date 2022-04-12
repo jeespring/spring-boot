@@ -1,6 +1,7 @@
 package com.jeespring.controller;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.jeespring.entity.User;
 import com.jeespring.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -48,8 +50,13 @@ public class UserController {
     }
 
     @RequestMapping("/selectPage")
-    public IPage<User> selectPage(@RequestBody User user, int pageNumber, int pageSize) {
+    public Page<User> selectPage(@RequestBody User user, int pageNumber, int pageSize) {
         return userService.selectPage(user, pageNumber, pageSize);
+    }
+
+    @RequestMapping("/selectByNameAndCreateTimeRange")
+    public List<User> selectByNameAndCreateTimeRange(String name, String beginTime, String endTime) {
+        return userService.selectByNameAndCreateTimeRange(name, beginTime, endTime);
     }
 
     @RequestMapping("/selectByMap")

@@ -3,7 +3,6 @@ package com.jeespring.service.impl;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
-import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.jeespring.entity.User;
 import com.jeespring.mapper.UserMapper;
@@ -50,14 +49,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> selectList(User user) {
-        QueryWrapper<User> wapper = new QueryWrapper<>();
-        wapper.eq("name", user.getName());
+        QueryWrapper<User> wapper = new QueryWrapper<>(user);
         return userMapper.selectList(wapper);
     }
 
     @Override
-    public IPage<User> selectPage(User user, int pageNumber, int pageSize) {
-        IPage<User> page = new Page(pageNumber, pageSize);
+    public Page<User> selectPage(User user, int pageNumber, int pageSize) {
+        Page<User> page = new Page(pageNumber, pageSize);
         Wrapper<User> wapper = new QueryWrapper<>();
         return userMapper.selectPage(page, wapper);
     }
@@ -83,9 +81,17 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public IPage<User> selectPageByAge(User user, int pageNumber, int pageSize) {
-        IPage<User> page = new Page(pageNumber, pageSize);
+    public Page<User> selectPageByAge(User user, int pageNumber, int pageSize) {
+        Page<User> page = new Page(pageNumber, pageSize);
         return userMapper.selectPageByAge(page, user);
+    }
+
+    @Override
+    public List<User> selectByNameAndCreateTimeRange(String name, String beginTime, String endTime) {
+        QueryWrapper<User> wapper = new QueryWrapper<>();
+        wapper.eq("name", name);
+        wapper.between("create_time", beginTime, endTime);
+        return userMapper.selectList(wapper);
     }
 
     /**
@@ -180,5 +186,4 @@ public class UserServiceImpl implements UserService {
     public int deleteBatchIds(List<Long> ids) {
         return userMapper.deleteBatchIds(ids);
     }
-
 }
