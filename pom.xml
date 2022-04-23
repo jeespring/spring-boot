@@ -27,6 +27,7 @@
         <module>spring-boot-filter</module>
         <module>spring-boot-listener</module>
         <module>spring-boot-rocketmq</module>
+        <module>spring-boot-freemarker</module>
     </modules>
 
     <properties>
