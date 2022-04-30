@@ -10,7 +10,7 @@
 
     <groupId>com.jeespring</groupId>
     <artifactId>spring-boot-admin-server</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <name>spring-boot-admin-server</name>
     <description>spring-boot-admin-server</description>
 
