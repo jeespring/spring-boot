@@ -16,7 +16,7 @@ spring:
     password: root
   elasticsearch:
     rest:
-      uris: http://127.0.0.1:9200
+      uris: http://192.168.19.10:9200
 mybatis:
   type-aliases-package: com.jeespring.elasticsearch.entity  # 定义所有操作类的别名所在包
   mapper-locations: classpath:/mapper/*.xml
